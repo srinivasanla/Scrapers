@@ -1,0 +1,102 @@
+<!doctype html>
+        <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+        <!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+        <!--[if IE 8]>    <html class="lt-ie9" lang="en-US"> <![endif]-->
+        <!--[if gt IE 8]><!--> 
+<html lang="en-US" ng-app> <!--<![endif]-->
+        
+        <head>
+                <!-- META TAGS -->
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                <title>Knowledge Base Template</title>
+
+                <link rel="shortcut icon" href="images/favicon.png" />
+
+
+                <!-- Google Web Fonts-->
+                <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+                <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+                <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+                <!-- Style Sheet-->
+                <link rel="stylesheet" href="style.css"/>
+                <link rel='stylesheet' id='bootstrap-css-css'  href='css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
+                <link rel='stylesheet' id='responsive-css-css'  href='css/responsive5152.css?ver=1.0' type='text/css' media='all' />
+                <link rel='stylesheet' id='main-css-css'  href='css/main5152.css?ver=1.0' type='text/css' media='all' />
+        </head>
+
+        <body>
+
+                <div class="header-wrapper" ng-include="'views/headers.html'"></div>
+
+                <!-- Start of Search Wrapper -->
+                <div class="search-area-wrapper">
+                        <div class="search-area container" style="padding-bottom: 37%;">
+                                <h3 class="search-header">Have a Question?</h3>
+                                <p class="search-tag-line">If you have any question you can ask below or enter what you are looking for!</p>
+
+                                <form id="search-form" class="search-form clearfix" method="get" action="#" autocomplete="off">
+                                        <input class="search-term required" type="text" id="s" name="s" placeholder="Type your search terms here" title="* Please enter a search term!" />
+                                        <input class="search-btn" type="submit" value="Search" />
+                                        <div id="search-error-container"></div>
+                                </form>
+
+                                <!-- Search box Start -->
+                                <!--
+                                <form>
+                                    <div class="well carousel-search hidden-sm" >
+                                        <div class="btn-group"> <a class="btn btn-outline-primary btn-lg dropdown-toggle btn-select" data-toggle="dropdown" href="#">Select a Country <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">United States</a></li>
+                                                <li><a href="#">Canada</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#"><span class="glyphicon glyphicon-star"></span> Other</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group"> <a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Select a Region <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">California</a></li>
+                                                <li><a href="#">New York</a></li>
+                                                <li><a href="#">Massachusetts</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Quebec</a>
+                                                </li><li><a href="#">Ontario</a>
+                                                </li><li><a href="#">British Columbia</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" id="btnSearch" class="btn btn-primary">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                -->
+                                <!-- Search box End -->
+                        </div>
+                </div>
+
+                <footer ng-include="'views/footers.html'"></footer>
+                <!-- End of Footer -->
+                
+                <!-- script -->
+                <script type='text/javascript' src='js/jquery-1.8.3.min.js'></script>
+                <script type='text/javascript' src='js/jquery.form.js'></script>
+                <script type='text/javascript' src='js/jquery.validate.min.js'></script>
+                <script type='text/javascript' src='js/lib/angularjs/angular.min.js'></script>
+                <script type='text/javascript' src='js/lib/angularjs/angular-route.min.js'></script>
+                <script type='text/javascript' src='js/lib/angularjs/angular-animate.min.js'></script>
+                <script>
+                        $(".dropdown-menu li a").click(function(){
+                          var selText = $(this).text();
+                          $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+                        });
+
+                        $("#btnSearch").click(function(){
+                                alert($('.btn-select').text()+", "+$('.btn-select2').text());
+                        });
+                </script>
+
+        </body>
+</html>
